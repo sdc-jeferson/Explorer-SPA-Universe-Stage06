@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+$neutral-colors-white:  #FFF;
+$platform-aliases-texto-base: #C4C4CC;
+$platform-aliases-titulos: #E1E1E6;
+$text-button : #02799D;
+
+:root{
+    font-size: 62.5%;
+}
+
+@mixin config-image-bg(){
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 4rem 7.2rem;
+    height: 100vh;
+    width: 100%;
+}
+
+
+@mixin config-title-all-pages(){
+    color: $platform-aliases-titulos;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 6rem;
+}
+
+@mixin config-paragraph-all-pages(){
+    color: $platform-aliases-titulos;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 2.9rem;
+    width: 64.8rem;
+    padding-top: 1.6rem;
+}
+
+body{
+    height: 100vh;
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    // position: relative;
+
+    .content{
+        // background-image: url(../images/page1.png);   
+        @include config-image-bg();
+        position: absolute;
+        height: 0;
+        nav{
+            display: flex;
+            align-items: center;
+            width: 50rem;
+            gap: 4.2rem;
+           
+            a{
+                color: $platform-aliases-texto-base;
+                font-size: 2.16rem;
+                font-weight: 400;
+                line-height: 2.16rem;
+                text-decoration: none;
+                transition: 0.2s ease-in-out;
+
+                &:hover{
+                    color:$neutral-colors-white;
+                    font-weight: 700;
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+
+    .home{
+        background-image: url(../images/page1.png);
+        @include config-image-bg();
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 2.4rem;
+        h1{
+            @include config-title-all-pages();
+        }
+
+        button{
+            background: transparent;
+            width: 21.5rem;
+            height: 4.8rem;
+            padding: 1rem 3.2rem;
+            border: 2px solid $neutral-colors-white;
+            border-radius: .5rem;
+
+            color:$neutral-colors-white;
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 700;
+            line-height: 2.4rem;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+
+            &:hover{
+                background-color: $neutral-colors-white;
+                color: $text-button;
+            }
+
+        }
+    }
+
+    .contentWrapper{
+        background-image: url(../images/page2.png);
+        @include config-image-bg();
+        padding-top: 18.3rem;
+        h1{
+            @include config-title-all-pages();
+        }
+
+        p{
+            @include config-paragraph-all-pages();
+        }
+    }
+
+
+    .error404{
+        background-image: url(../images/page2.png);
+        @include config-image-bg();
+        padding-top: 18.3rem;
+
+        h1{
+            @include config-title-all-pages();
+        }
+    }
+
+
+}
+
+
+
+
